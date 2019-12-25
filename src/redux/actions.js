@@ -3,6 +3,7 @@ import { createAction } from 'redux-act'
 export const MAP = {
   VIEWPORT_CHANGED: createAction('viewport has been changed'),
   SET_VIEWPORT: createAction('set viewport'),
+  SET_REF: createAction('set Map Ref'),
 }
 
 export const WAYPOINTS = {

@@ -21,7 +21,6 @@ const Path = ({ waypoints, onMarkerDrag }) => {
   return (
     <LayerGroup>
       {markers}
-      <Polyline positions={dots} />
     </LayerGroup>
   )
 }

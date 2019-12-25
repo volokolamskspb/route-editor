@@ -1,11 +1,12 @@
 // @flow
 import React from 'react'
 import { Map, TileLayer } from 'react-leaflet'
-import PropTypes from 'prop-types'
+import PropTypes, { any } from 'prop-types'
 import Path from '@components/Path/Path'
 
-const AppMap = props => (
+const AppMap = React.forwardRef((props, ref) => (
   <Map
+    ref={ref}
     viewport={props.viewport}
     style={{ height: `${props.height}px` }}
     trackResize
@@ -19,8 +20,7 @@ const AppMap = props => (
     />
     {props.waypoints.length > 0 && <Path {...props} />}
   </Map>
-  )
-
+  ));
 
 export default AppMap
 

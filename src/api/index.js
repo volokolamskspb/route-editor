@@ -1,5 +1,6 @@
 const autocomplete = new window.google.maps.places.AutocompleteService()
 const geocoder = new window.google.maps.Geocoder()
+//const placesService = new window.google.maps.places.PlacesService();
 
 export const getSuggestions = query =>
   new Promise((resolve, reject) => {
@@ -15,6 +16,7 @@ export const getSuggestions = query =>
       },
     )
   })
+
 
 export const getGeoCode = id =>
   new Promise((resolve, reject) => {

@@ -21,6 +21,8 @@ class ResizebleMap extends Component {
     this.state = {
       height: document.documentElement.clientHeight,
     }
+    this.ref = React.createRef();
+    console.log(this.ref)
     window.addEventListener('resize', this.onResize)
   }
 
@@ -32,17 +34,20 @@ class ResizebleMap extends Component {
     this.setState({ height: document.documentElement.clientHeight })
 
   render() {
+
     const props = {
       ...this.props,
       height: this.state.height,
     }
-    return <AppMap {...props} />
+
+    return <AppMap ref={this.ref} {...props} />
   }
 }
 
 const mapStateToProps = state => ({
   viewport: state.dynamicViewport,
   waypoints: state.waypoints,
+  ref: state.ref
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -58,9 +63,10 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => ({
   onMarkerDrag: (e, id) =>
     dispatchProps.dispatchNewWaypoints(
       changeWaypointPos(e, id, stateProps.waypoints),
-    ),
+  ),
+  onViewportChange: viewport => { console.log(stateProps, ownProps); dispatchProps.onViewportChange(viewport) }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps, { withRef: true })(
   ResizebleMap,
 )

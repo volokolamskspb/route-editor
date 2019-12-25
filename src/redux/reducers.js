@@ -1,5 +1,6 @@
 import { createReducer } from 'redux-act'
 import { MAP, AUTOCOMPLETE, WAYPOINTS } from './actions'
+//import { getPlaces } from '@/api'
 
 const reorder = (list, startIndex, endIndex) => {
   const listCopy = [...list]
@@ -24,7 +25,8 @@ const inititalState = {
 
 const reducer = createReducer(
   {
-    [MAP.SET_VIEWPORT]: (state, position) => ({
+    [MAP.SET_VIEWPORT]: (state, position) => {
+      return ({
       ...state,
       dynamicViewport: {
         zoom: state.staticViewport.zoom,
@@ -34,11 +36,18 @@ const reducer = createReducer(
         zoom: state.staticViewport.zoom,
         center: position,
       },
-    }),
-    [MAP.VIEWPORT_CHANGED]: (state, viewport) => ({
+    })
+    },
+    [MAP.SET_REF]: (state, ref) => { 
+      console.log(ref)
+    },
+    [MAP.VIEWPORT_CHANGED]: (state, viewport) => {
+      //console.log(mapRef.current.leafletElement.getBounds())
+      return ({
       ...state,
       staticViewport: viewport,
-    }),
+    })
+    },
     [WAYPOINTS.ADD_WAYPOINT]: (state, waypointContent) => ({
       ...state,
       nextId: state.nextId + 1,
