@@ -9,6 +9,7 @@ export const MAP = {
 export const WAYPOINTS = {
   REMOVE_WAYPOINT: createAction('remove item'),
   ADD_WAYPOINT: createAction('add waypoint'),
+  ADD_WAYPOINTS: createAction('add multiple waypoints'),
   REPLACE_WAYPOINTS: createAction('replace waypoints'),
   REORDER_WAYPOINTS: createAction('reorder waypoints'),
 }

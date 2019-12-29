@@ -1,6 +1,7 @@
+import Point from '@/components/map/Point'
+
 const autocomplete = new window.google.maps.places.AutocompleteService()
 const geocoder = new window.google.maps.Geocoder()
-//const placesService = new window.google.maps.places.PlacesService();
 
 export const getSuggestions = query =>
   new Promise((resolve, reject) => {
@@ -17,6 +18,24 @@ export const getSuggestions = query =>
     )
   })
 
+export const getPlaces = map =>
+    new Promise((resolve, reject) => {
+      const { _southWest, _northEast } = map.leafletElement.getBounds()
+      const bounds = new window.google.maps.LatLngBounds(
+            new Point(_southWest),
+            new Point(_northEast))
+      const mapG = new window.google.maps.Map(map)
+      const service = new window.google.maps.places.PlacesService(mapG)
+      service.nearbySearch({
+        bounds,
+        type: ['store'],
+      }, (results, status) => {
+        if (status !== 'OK') {
+          reject(status)
+        }
+        resolve(results)
+      })
+    })
 
 export const getGeoCode = id =>
   new Promise((resolve, reject) => {

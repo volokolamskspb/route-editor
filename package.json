@@ -58,7 +58,7 @@
     "react-hot-loader": "^4.12.18",
     "react-leaflet": "^1.6.4",
     "react-redux": "^5.1.1",
-    "redux": "^4.0.4",
+    "redux": "^4.0.5",
     "redux-act": "^1.7.7"
   }
 }
