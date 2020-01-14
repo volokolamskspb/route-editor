@@ -13,6 +13,7 @@ const changeWaypointPos = (e, id, waypoints) => {
     }
     return el
   })
+  console.log(newWaypoints)
   return newWaypoints
 }
 
