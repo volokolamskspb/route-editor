@@ -24,11 +24,9 @@ const mapDispatchToProps = dispatch => ({
     }
     getSuggestions(input)
       .then((json) => {
-       // console.log(json)
         dispatch(AUTOCOMPLETE.FETCH_SUGGESTIONS_SUCCESS(json))
       })
       .catch((status) => {
-        console.log(status)
         dispatch(AUTOCOMPLETE.FETCH_SUGGESTIONS_SUCCESS([]))
       })
   },

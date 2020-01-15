@@ -3,21 +3,25 @@ import PropTypes from 'prop-types'
 import DroppableList from '@components/droppableList/DroppableList'
 import s from './WaypointsList.css'
 
+// <InputWithShadow onInputSend={onNewItem} />
 const WaypointsList = ({
   waypoints,
   onItemRemove,
   onItemClick,
   onNewItem,
+  onShowDetails
 }) => (
   <div className={s.waypointsList}>
     <div className={s.waypointsHeader}>Locations: </div>
-    <InputWithShadow onInputSend={onNewItem} />
     <div className={s.itemList}>
       <DroppableList
         onItemRemove={onItemRemove}
         itemsData={waypoints}
         onItemClick={onItemClick}
+        onShowDetails={onShowDetails}
       />
+    </div>
+    <div>
     </div>
   </div>
 )
@@ -37,6 +41,7 @@ WaypointsList.propTypes = {
   onItemRemove: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
   onNewItem: PropTypes.func.isRequired,
+  onShowDetails: PropTypes.func.isRequired
 }
 
 class InputWithShadow extends Component {

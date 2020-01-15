@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import s from './Controls.css'
 import SearchContainer from '@/containers/SearchContainer'
 import WaypointsContainer from '@/containers/WaypointsContainer'
+import DetailsContainer from '@/containers/DetailsContainer'
 
 class Controls extends Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Controls extends Component {
           />
         </div>
         <WaypointsContainer />
+        <DetailsContainer />
       </div>
     )
   }

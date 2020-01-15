@@ -5,15 +5,15 @@ import PropTypes from 'prop-types'
 import Path from '@components/Path/Path'
 
 const AppMap = React.forwardRef((props, ref) => {
-  function curry(viewport) {
-    return props.onViewportChange({ viewport, ref })
+  function curry() {
+    return props.onViewportChanged({ ref })
   }
   return (<Map
     ref={ref}
     viewport={props.viewport}
     style={{ height: `${props.height}px` }}
     trackResize
-    onViewportChange={curry}
+    onViewportChanged={curry}
     zoomControl={false}
   >
     <TileLayer
@@ -40,6 +40,6 @@ AppMap.propTypes = {
     center: PropTypes.arrayOf(PropTypes.number),
     zoom: PropTypes.number,
   }).isRequired,
-  onViewportChange: PropTypes.func.isRequired,
+  onViewportChanged: PropTypes.func.isRequired,
   height: PropTypes.number.isRequired,
 }

@@ -12,6 +12,8 @@ export const WAYPOINTS = {
   ADD_WAYPOINTS: createAction('add multiple waypoints'),
   REPLACE_WAYPOINTS: createAction('replace waypoints'),
   REORDER_WAYPOINTS: createAction('reorder waypoints'),
+  OPEN_BAR: createAction('open sidebar with details'),
+  FULL_INFO: createAction('sett full info about waypoints'),
 }
 
 export const AUTOCOMPLETE = {

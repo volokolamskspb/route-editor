@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Droppable } from 'react-beautiful-dnd'
 import DraggableItem from './../draggableItem/DraggableItem'
 
-const DroppableList = ({ itemsData, onItemRemove, onItemClick }) => (
+const DroppableList = ({ itemsData, onItemRemove, onItemClick, onShowDetails }) => (
   <Droppable droppableId="itemList">
     {provided => (
       <div ref={provided.innerRef}>
@@ -13,6 +13,7 @@ const DroppableList = ({ itemsData, onItemRemove, onItemClick }) => (
             itemData={el}
             onItemRemove={onItemRemove}
             onItemClick={onItemClick}
+            onShowDetails={onShowDetails}
           />
           ))}
       </div>
@@ -32,4 +33,5 @@ DroppableList.propTypes = {
   ).isRequired,
   onItemRemove: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
+  onShowDetails: PropTypes.func.isRequired
 }

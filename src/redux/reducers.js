@@ -17,8 +17,10 @@ const inititalState = {
   dynamicViewport: startViewport,
   staticViewport: startViewport,
   waypoints: [],
+  fullWaypoints: [],
   nextId: 0,
   suggestions: [],
+  details: {}
 }
 
 const reducer = createReducer(
@@ -38,7 +40,6 @@ const reducer = createReducer(
       ...state,
       staticViewport: viewport,
     }),
-      /*
     [WAYPOINTS.ADD_WAYPOINT]: (state, waypointContent) => ({
       ...state,
       nextId: state.nextId + 1,
@@ -51,7 +52,6 @@ const reducer = createReducer(
         },
       ],
     }),
-      */
     [WAYPOINTS.ADD_WAYPOINTS]: (state, waypointContent) => ({
       ...state,
       nextId: state.nextId + 1,
@@ -73,6 +73,14 @@ const reducer = createReducer(
       ...state,
       nextId: state.nextId,
       waypoints,
+    }),
+    [WAYPOINTS.OPEN_BAR]: (state, id) =>  ({
+      ...state,
+      details: state.fullWaypoints.filter(el => el.id === id)[0]
+    }),
+    [WAYPOINTS.FULL_INFO]: (state, fullWaypoints) =>  ({
+      ...state,
+      fullWaypoints: fullWaypoints
     }),
     [WAYPOINTS.REORDER_WAYPOINTS]: (state, indices) => ({
       ...state,

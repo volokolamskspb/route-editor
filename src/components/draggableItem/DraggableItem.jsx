@@ -5,7 +5,7 @@ import s from './DraggableItem.css'
 import DeleteIcon from '@components/icons/DeleteIcon'
 import GeoIcon from '@components/icons/GeoIcon'
 
-const DraggableItem = ({ itemData, onItemRemove, onItemClick }) => {
+const DraggableItem = ({ itemData, onItemRemove, onItemClick, onShowDetails }) => {
   const onClick = (e) => {
     e.stopPropagation()
     onItemRemove(itemData.id)
@@ -20,7 +20,7 @@ const DraggableItem = ({ itemData, onItemRemove, onItemClick }) => {
             ref={provided.innerRef}
             {...provided.dragHandleProps}
           >
-            <div className={s.content}>
+            <div onClick={() => onShowDetails(itemData.wID)} className={s.content}>
               <span>{itemData.content}</span>
             </div>
             <div className={s.buttonsBlock}>
@@ -52,4 +52,5 @@ DraggableItem.propTypes = {
   }).isRequired,
   onItemRemove: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
+  onShowDetails: PropTypes.func.isRequired
 }
