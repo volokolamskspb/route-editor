@@ -4,7 +4,6 @@
     background: white;
     bottom: 0;
     position: absolute;
-    overflow: scroll;
     padding: 10px;
     height: fit-content;
     min-height: 400px;
