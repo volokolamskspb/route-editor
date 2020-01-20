@@ -20,7 +20,8 @@ const inititalState = {
   fullWaypoints: [],
   nextId: 0,
   suggestions: [],
-  details: {}
+  details: {},
+  visibleDetails: false
 }
 
 const reducer = createReducer(
@@ -76,6 +77,7 @@ const reducer = createReducer(
     }),
     [WAYPOINTS.OPEN_BAR]: (state, id) =>  ({
       ...state,
+      visibleDetails: true,
       details: state.fullWaypoints.filter(el => el.id === id)[0]
     }),
     [WAYPOINTS.FULL_INFO]: (state, fullWaypoints) =>  ({

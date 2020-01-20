@@ -12,7 +12,7 @@ const WaypointsList = ({
   onShowDetails
 }) => (
   <div className={s.waypointsList}>
-    <div className={s.waypointsHeader}>Locations: </div>
+    <div className={s.waypointsHeader}>Магазины: </div>
     <div className={s.itemList}>
       <DroppableList
         onItemRemove={onItemRemove}
