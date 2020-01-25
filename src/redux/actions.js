@@ -13,6 +13,7 @@ export const WAYPOINTS = {
   REPLACE_WAYPOINTS: createAction('replace waypoints'),
   REORDER_WAYPOINTS: createAction('reorder waypoints'),
   OPEN_BAR: createAction('open sidebar with details'),
+  CLOSE_BAR: createAction('close sidebar with details'),
   FULL_INFO: createAction('sett full info about waypoints'),
 }
 
