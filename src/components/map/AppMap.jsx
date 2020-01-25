@@ -18,7 +18,7 @@ const AppMap = React.forwardRef((props, ref) => {
   >
     <TileLayer
       url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-            // eslint-disable-next-line max-len
+      // eslint-disable-next-line max-len
       attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a>"
     />
     {props.waypoints.length > 0 && <Path {...props} />}

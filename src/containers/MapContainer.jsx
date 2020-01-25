@@ -19,6 +19,7 @@ const changeWaypointPos = (e, id, waypoints) => {
 class ResizebleMap extends Component {
   constructor(props) {
     super(props)
+    this.inputRef = React.createRef();
     this.state = {
       height: document.documentElement.clientHeight
     }
@@ -29,16 +30,19 @@ class ResizebleMap extends Component {
     window.removeEventListener('resize', this.onResize)
   }
 
+  componentDidMount() {
+    this.props.onViewportChanged({ref: this.inputRef})
+  } 
+
   onResize = () =>
     this.setState({ height: document.documentElement.clientHeight })
 
   render() {
-    const ref = React.createRef()
     const props = {
       ...this.props,
       height: this.state.height,
     }
-    return <AppMap ref={ref} {...props} />
+    return <AppMap ref={this.inputRef} {...props} />
   }
 }
 
