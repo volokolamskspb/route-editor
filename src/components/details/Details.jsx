@@ -7,6 +7,7 @@ const Details = ({
 }) => (
     <div class={s.details}>
         <div>
+        	<div class={s.head}></div>
             {JSON.stringify(details)}
         </div>
     </div>
