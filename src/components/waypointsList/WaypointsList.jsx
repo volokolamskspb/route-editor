@@ -9,7 +9,7 @@ const WaypointsList = ({
   onItemRemove,
   onItemClick,
   onNewItem,
-  onShowDetails
+  onShowDetails,
 }) => (
   <div className={s.waypointsList}>
     <div className={s.waypointsHeader}>Магазины: </div>
@@ -21,8 +21,7 @@ const WaypointsList = ({
         onShowDetails={onShowDetails}
       />
     </div>
-    <div>
-    </div>
+    <div />
   </div>
 )
 
@@ -41,7 +40,7 @@ WaypointsList.propTypes = {
   onItemRemove: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
   onNewItem: PropTypes.func.isRequired,
-  onShowDetails: PropTypes.func.isRequired
+  onShowDetails: PropTypes.func.isRequired,
 }
 
 class InputWithShadow extends Component {

@@ -18,7 +18,7 @@ export const getSuggestions = query =>
     )
   })
 
-export const getPlaces = (map) =>
+export const getPlaces = map =>
     new Promise((resolve, reject) => {
       const { _southWest, _northEast } = map.leafletElement.getBounds()
       const bounds = new window.google.maps.LatLngBounds(

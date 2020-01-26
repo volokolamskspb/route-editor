@@ -21,7 +21,7 @@ const inititalState = {
   nextId: 0,
   suggestions: [],
   details: {},
-  visibleDetails: false
+  visibleDetails: false,
 }
 
 const reducer = createReducer(
@@ -75,18 +75,18 @@ const reducer = createReducer(
       nextId: state.nextId,
       waypoints,
     }),
-    [WAYPOINTS.OPEN_BAR]: (state, id) =>  ({
+    [WAYPOINTS.OPEN_BAR]: (state, id) => ({
       ...state,
       visibleDetails: true,
-      details: state.fullWaypoints.filter(el => el.id === id)[0]
+      details: state.fullWaypoints.filter(el => el.id === id)[0],
     }),
-    [WAYPOINTS.CLOSE_BAR]: (state) =>  ({
+    [WAYPOINTS.CLOSE_BAR]: state => ({
       ...state,
-      visibleDetails: false
+      visibleDetails: false,
     }),
-    [WAYPOINTS.FULL_INFO]: (state, fullWaypoints) =>  ({
+    [WAYPOINTS.FULL_INFO]: (state, fullWaypoints) => ({
       ...state,
-      fullWaypoints: fullWaypoints
+      fullWaypoints,
     }),
     [WAYPOINTS.REORDER_WAYPOINTS]: (state, indices) => ({
       ...state,

@@ -33,5 +33,5 @@ DroppableList.propTypes = {
   ).isRequired,
   onItemRemove: PropTypes.func.isRequired,
   onItemClick: PropTypes.func.isRequired,
-  onShowDetails: PropTypes.func.isRequired
+  onShowDetails: PropTypes.func.isRequired,
 }

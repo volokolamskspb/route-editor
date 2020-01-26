@@ -19,9 +19,9 @@ const changeWaypointPos = (e, id, waypoints) => {
 class ResizebleMap extends Component {
   constructor(props) {
     super(props)
-    this.inputRef = React.createRef();
+    this.inputRef = React.createRef()
     this.state = {
-      height: document.documentElement.clientHeight
+      height: document.documentElement.clientHeight,
     }
     window.addEventListener('resize', this.onResize)
   }
@@ -30,9 +30,13 @@ class ResizebleMap extends Component {
     window.removeEventListener('resize', this.onResize)
   }
 
+  componentDidUpdate() {
+    this.props.onViewportChanged({ ref: this.inputRef })
+  }
+
   componentDidMount() {
-    this.props.onViewportChanged({ref: this.inputRef})
-  } 
+    this.props.onViewportChanged({ ref: this.inputRef })
+  }
 
   onResize = () =>
     this.setState({ height: document.documentElement.clientHeight })
@@ -52,28 +56,27 @@ const mapStateToProps = state => ({
 })
 
 function filterWaypoints(data) {
-  return data.map((el, id) => {
-    return { 
-      id, 
-      wID: el.id, 
-      position: 
-      [el.geometry.location.lat(), el.geometry.location.lng()], 
-      content: el.name }
-  })
+  return data.map((el, id) => ({
+    id,
+    wID: el.id,
+    position:
+      [el.geometry.location.lat(), el.geometry.location.lng()],
+    content: el.name }))
 }
 
 const mapDispatchToProps = dispatch => ({
-    onViewportChanged: ({ ref }) => {
-      const map = ref.current;
-      getPlaces(map).then((data) => {
+  onViewportChanged: ({ ref }) => {
+    const map = ref.current
+    getPlaces(map)
+      .then((data) => {
         const waypoints = filterWaypoints(data)
         dispatch(WAYPOINTS.REPLACE_WAYPOINTS(waypoints))
         dispatch(WAYPOINTS.FULL_INFO(data))
       }, rej => console.log(rej))
-    },
-    dispatchNewWaypoints: waypoints =>
+  },
+  dispatchNewWaypoints: waypoints =>
       dispatch(WAYPOINTS.REPLACE_WAYPOINTS(waypoints)),
-  })
+})
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => ({
   ...stateProps,

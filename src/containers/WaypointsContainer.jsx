@@ -10,7 +10,7 @@ const mapDispatchToProps = dispatch => ({
   onItemRemove: id => dispatch(WAYPOINTS.REMOVE_WAYPOINT(id)),
   onNewItem: content => dispatch(WAYPOINTS.ADD_WAYPOINT(content)),
   onItemClick: position => dispatch(MAP.SET_VIEWPORT(position)),
-  onShowDetails: (id) => dispatch(WAYPOINTS.OPEN_BAR(id))
+  onShowDetails: id => dispatch(WAYPOINTS.OPEN_BAR(id)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(WaypointsList)
