@@ -7240,7 +7240,7 @@ Path.propTypes = {
 // removed by extract-text-webpack-plugin
 module.exports = {"item":"src-components-autocomplete-Autocomplete__item--2bupU","button":"src-components-autocomplete-Autocomplete__button--1sc2A","description":"src-components-autocomplete-Autocomplete__description--1rn89","bold":"src-components-autocomplete-Autocomplete__bold--2QxCc"};
     if(true) {
-      // 1579961957231
+      // 1580057890039
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -7329,7 +7329,7 @@ Autocomplete.propTypes = {
 // removed by extract-text-webpack-plugin
 module.exports = {"controlsWrapper":"src-components-controls-Controls__controlsWrapper--SLwo-","hidden":"src-components-controls-Controls__hidden--2aG8I","searchWrapper":"src-components-controls-Controls__searchWrapper--1sqAr"};
     if(true) {
-      // 1579961957167
+      // 1580057889976
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -7411,7 +7411,7 @@ exports.default = Controls;
 
 
 Object.defineProperty(exports, "__esModule", {
-      value: true
+  value: true
 });
 
 var _react = __webpack_require__("./node_modules/react/index.js");
@@ -7421,17 +7421,30 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const CloseIcon = () => _react2.default.createElement(
-      "svg",
-      { viewPort: "0 0 12 12", version: "1.1", width: "15px", height: "15px",
-            xmlns: "http://www.w3.org/2000/svg" },
-      _react2.default.createElement("line", { x1: "1", y1: "11",
-            x2: "11", y2: "1",
-            stroke: "black",
-            strokeWidth: "2" }),
-      _react2.default.createElement("line", { x1: "1", y1: "1",
-            x2: "11", y2: "11",
-            stroke: "black",
-            strokeWidth: "2" })
+  "svg",
+  {
+    viewPort: "0 0 12 12",
+    version: "1.1",
+    width: "15px",
+    height: "15px",
+    xmlns: "http://www.w3.org/2000/svg"
+  },
+  _react2.default.createElement("line", {
+    x1: "1",
+    y1: "11",
+    x2: "11",
+    y2: "1",
+    stroke: "black",
+    strokeWidth: "2"
+  }),
+  _react2.default.createElement("line", {
+    x1: "1",
+    y1: "1",
+    x2: "11",
+    y2: "11",
+    stroke: "black",
+    strokeWidth: "2"
+  })
 );
 
 exports.default = CloseIcon;
@@ -7444,7 +7457,7 @@ exports.default = CloseIcon;
 // removed by extract-text-webpack-plugin
 module.exports = {"details":"src-components-details-Details__details--1y77c","icon":"src-components-details-Details__icon--3mPUo","header":"src-components-details-Details__header--1ydHv","title":"src-components-details-Details__title--15-O_","content":"src-components-details-Details__content--3vghl","flex":"src-components-details-Details__flex--3MScf"};
     if(true) {
-      // 1579961957180
+      // 1580057889986
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -7460,7 +7473,7 @@ module.exports = {"details":"src-components-details-Details__details--1y77c","ic
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__("./node_modules/react/index.js");
@@ -7482,75 +7495,72 @@ var _CloseIcon2 = _interopRequireDefault(_CloseIcon);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const createImages = pics => {
-    if (!pics) return '';
-    let images = [];
-    for (let i = 0; i < pics.length; i++) {
-        images.push(_react2.default.createElement('img', { src: pics[i].getUrl() }));
-    }
-    return images;
+  if (!pics) return '';
+  const images = [];
+  for (let i = 0; i < pics.length; i++) {
+    images.push(_react2.default.createElement('img', { src: pics[i].getUrl() }));
+  }
+  return images;
 };
 
 const Details = ({
-    details,
-    visibleDetails,
-    onClose
-}) => {
-    console.log(details, visibleDetails);
-    return visibleDetails && _react2.default.createElement(
-        'div',
-        { className: _Details2.default.details },
-        _react2.default.createElement(
-            'div',
-            { className: _Details2.default.header },
-            _react2.default.createElement(
-                'div',
-                { className: _Details2.default.flex },
-                _react2.default.createElement('img', { className: _Details2.default.icon, src: details.icon }),
-                _react2.default.createElement(
-                    'h2',
-                    { className: _Details2.default.title },
-                    details.name
-                )
-            ),
-            _react2.default.createElement(
-                'div',
-                { onClick: onClose },
-                _react2.default.createElement(_CloseIcon2.default, null)
-            )
-        ),
-        _react2.default.createElement(
-            'div',
-            { className: _Details2.default.content },
-            _react2.default.createElement(
-                'div',
-                null,
-                ' \u0410\u0434\u0440\u0435\u0441: ',
-                details.vicinity,
-                ' '
-            ),
-            _react2.default.createElement(
-                'div',
-                null,
-                ' \u0424\u043E\u0442\u043E: '
-            ),
-            createImages(details.photos),
-            details.photos && _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'span',
-                    null,
-                    '\u0411\u043E\u043B\u044C\u0448\u0435 \u0444\u043E\u0442\u043E: '
-                ),
-                _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: details.photos[0]['html_attributions'] } })
-            )
-        )
-    );
-};
+  details,
+  visibleDetails,
+  onClose
+}) => visibleDetails && _react2.default.createElement(
+  'div',
+  { className: _Details2.default.details },
+  _react2.default.createElement(
+    'div',
+    { className: _Details2.default.header },
+    _react2.default.createElement(
+      'div',
+      { className: _Details2.default.flex },
+      _react2.default.createElement('img', { className: _Details2.default.icon, src: details.icon }),
+      _react2.default.createElement(
+        'h2',
+        { className: _Details2.default.title },
+        details.name
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { onClick: onClose },
+      _react2.default.createElement(_CloseIcon2.default, null)
+    )
+  ),
+  _react2.default.createElement(
+    'div',
+    { className: _Details2.default.content },
+    _react2.default.createElement(
+      'div',
+      null,
+      ' \u0410\u0434\u0440\u0435\u0441: ',
+      details.vicinity,
+      ' '
+    ),
+    _react2.default.createElement(
+      'div',
+      null,
+      ' \u0424\u043E\u0442\u043E: '
+    ),
+    createImages(details.photos),
+    details.photos && _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'span',
+        null,
+        '\u0411\u043E\u043B\u044C\u0448\u0435 \u0444\u043E\u0442\u043E: '
+      ),
+      _react2.default.createElement('span', { dangerouslySetInnerHTML: { __html: details.photos[0].html_attributions } })
+    )
+  )
+);
 Details.propTypes = {
-    details: _propTypes2.default.object,
-    visibleDetails: _propTypes2.default.bool,
-    onClose: _propTypes2.default.func.isRequired
+  details: _propTypes2.default.object,
+  visibleDetails: _propTypes2.default.bool,
+  onClose: _propTypes2.default.func.isRequired
 };
 exports.default = Details;
 
@@ -7562,7 +7572,7 @@ exports.default = Details;
 // removed by extract-text-webpack-plugin
 module.exports = {"item":"src-components-draggableItem-DraggableItem__item--35mXc","content":"src-components-draggableItem-DraggableItem__content--1to3-","buttonsBlock":"src-components-draggableItem-DraggableItem__buttonsBlock--2oRpv","button":"src-components-draggableItem-DraggableItem__button--K_kKv"};
     if(true) {
-      // 1579961957199
+      // 1580057890007
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -7805,7 +7815,7 @@ exports.default = GeoIcon;
 // removed by extract-text-webpack-plugin
 module.exports = {"icon":"src-components-icons-Icon__icon--37Sgb"};
     if(true) {
-      // 1579961957210
+      // 1580057890018
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -7976,7 +7986,7 @@ exports.default = Point;
 // removed by extract-text-webpack-plugin
 module.exports = {"inputWrapper":"src-components-searchBox-SearchBox__inputWrapper--FWZqu","input":"src-components-searchBox-SearchBox__input--1thw6","button":"src-components-searchBox-SearchBox__button--1sUHn","arrowButton":"src-components-searchBox-SearchBox__arrowButton--b7qxj"};
     if(true) {
-      // 1579961957221
+      // 1580057890029
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -8051,7 +8061,7 @@ SearchBox.propTypes = {
 // removed by extract-text-webpack-plugin
 module.exports = {"waypointsList":"src-components-waypointsList-WaypointsList__waypointsList--2zFti","itemList":"src-components-waypointsList-WaypointsList__itemList--1zvS8","input":"src-components-waypointsList-WaypointsList__input--2U0OL","inputWrapper":"src-components-waypointsList-WaypointsList__inputWrapper--bPVZO","inputWrapperFocused":"src-components-waypointsList-WaypointsList__inputWrapperFocused--3-saK","waypointsHeader":"src-components-waypointsList-WaypointsList__waypointsHeader--3C7q8"};
     if(true) {
-      // 1579961957189
+      // 1580057889996
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -8190,7 +8200,7 @@ exports.default = WaypointsList;
 // removed by extract-text-webpack-plugin
 module.exports = {"mapWrapper":"src-containers-App__mapWrapper--15tWE","appContainer":"src-containers-App__appContainer--2w_tZ"};
     if(true) {
-      // 1579961957155
+      // 1580057889965
       var cssReload = __webpack_require__("./node_modules/css-hot-loader/hotModuleReplacement.js")(module.i, {"fileMap":"{fileName}"});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);;
@@ -8364,6 +8374,7 @@ class ResizebleMap extends _react.Component {
 
     this.onResize = () => this.setState({ height: document.documentElement.clientHeight });
 
+    this.inputRef = _react2.default.createRef();
     this.state = {
       height: document.documentElement.clientHeight
     };
@@ -8374,12 +8385,19 @@ class ResizebleMap extends _react.Component {
     window.removeEventListener('resize', this.onResize);
   }
 
+  componentDidUpdate() {
+    this.props.onViewportChanged({ ref: this.inputRef });
+  }
+
+  componentDidMount() {
+    this.props.onViewportChanged({ ref: this.inputRef });
+  }
+
   render() {
-    const ref = _react2.default.createRef();
     const props = _extends({}, this.props, {
       height: this.state.height
     });
-    return _react2.default.createElement(_AppMap2.default, _extends({ ref: ref }, props));
+    return _react2.default.createElement(_AppMap2.default, _extends({ ref: this.inputRef }, props));
   }
 }
 
@@ -8389,13 +8407,11 @@ const mapStateToProps = state => ({
 });
 
 function filterWaypoints(data) {
-  return data.map((el, id) => {
-    return {
-      id,
-      wID: el.id,
-      position: [el.geometry.location.lat(), el.geometry.location.lng()],
-      content: el.name };
-  });
+  return data.map((el, id) => ({
+    id,
+    wID: el.id,
+    position: [el.geometry.location.lat(), el.geometry.location.lng()],
+    content: el.name }));
 }
 
 const mapDispatchToProps = dispatch => ({
@@ -8742,7 +8758,7 @@ const reducer = (0, _reduxAct.createReducer)({
     visibleDetails: false
   }),
   [_actions.WAYPOINTS.FULL_INFO]: (state, fullWaypoints) => _extends({}, state, {
-    fullWaypoints: fullWaypoints
+    fullWaypoints
   }),
   [_actions.WAYPOINTS.REORDER_WAYPOINTS]: (state, indices) => _extends({}, state, {
     nextId: state.nextId,
